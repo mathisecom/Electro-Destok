@@ -414,6 +414,8 @@
       "settings": {
         "collection": "",
         "products": [
+          "ui-mural-r32-t09-42qhg009d8s-carrier",
+          "carrier-unite-interieure-murale-r32-t024",
           "ue-monosplit-residentiel-r32-t09-38qhg009d8s-carrier",
           "carrier-multi-split-r32-t042-5-sorties",
           "carrier-multi-split-r32-t036-4-sorties",
@@ -422,9 +424,7 @@
           "carrier-multi-split-r32-t021-3-sorties",
           "carrier-multi-split-r32-t018-2-sorties",
           "carrier-multi-split-r32-t014-2-sorties",
-          "carrier-mono-split-r32-t024",
-          "carrier-unite-interieure-murale-r32-t024",
-          "ui-mural-r32-t09-42qhg009d8s-carrier"
+          "carrier-mono-split-r32-t024"
         ],
         "full_width": true,
         "stack_products": false,
