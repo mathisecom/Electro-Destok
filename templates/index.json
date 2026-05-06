@@ -52,6 +52,9 @@
     },
     "featured_collection_FaCVqH": {
       "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}"
+      ],
       "name": "Featured collection",
       "settings": {
         "collection": "",
