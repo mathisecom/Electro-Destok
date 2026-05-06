@@ -469,12 +469,36 @@
             "title": "Testimonial 3",
             "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
           }
+        },
+        "testimonial_tfnU3F": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_QBpJkt": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
         }
       },
       "block_order": [
         "testimonial_HVETTY",
         "testimonial_Jaxrge",
-        "testimonial_yCfqJw"
+        "testimonial_yCfqJw",
+        "testimonial_tfnU3F",
+        "testimonial_QBpJkt"
       ],
       "name": "Testimonials",
       "settings": {
