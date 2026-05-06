@@ -284,14 +284,14 @@
         "feature_C9mmDg": {
           "type": "feature",
           "settings": {
-            "icon": "diamond",
+            "icon": "check",
             "text": "Mise en route avec vérification complète."
           }
         },
         "feature_XMcQ4L": {
           "type": "feature",
           "settings": {
-            "icon": "typography",
+            "icon": "rocket",
             "text": "Choix de la puissance adaptée à votre logement."
           }
         }
@@ -313,7 +313,7 @@
         "button_url": "",
         "image": "shopify://shop_images/installation.webp",
         "show_decorations": false,
-        "image_radius": 0,
+        "image_radius": 20,
         "bg_color": "#ffffff",
         "text_color": "#182b34",
         "description_color": "#182b34",
