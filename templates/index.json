@@ -49,45 +49,76 @@
         "trust_subtitle_color": "#ffffff"
       }
     },
-    "slideshow": {
-      "type": "slideshow",
+    "beneficeicons_PfQa9U": {
+      "type": "beneficeicons",
       "blocks": {
-        "slide-1": {
-          "type": "image",
+        "feature_KxmkgV": {
+          "type": "feature",
           "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "Slide title",
-            "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
+            "title": "12 ans d'expérience",
+            "description": "Fabrication française,\nExpertise éprouvée"
+          }
+        },
+        "feature_yhUcrt": {
+          "type": "feature",
+          "settings": {
+            "title": "100% clés en main",
+            "description": "De l'étude à la pose,\non s'occupe de tout"
+          }
+        },
+        "feature_ddcrF4": {
+          "type": "feature",
+          "settings": {
+            "title": "Installation en 5 jours",
+            "description": "Sans chantier lourd,\nSans perte de temps"
+          }
+        },
+        "feature_6mDiKi": {
+          "type": "feature",
+          "settings": {
+            "title": "+4000 clients installés",
+            "description": "Des clients satisfaits\npartout en France"
           }
         }
       },
       "block_order": [
-        "slide-1"
+        "feature_KxmkgV",
+        "feature_yhUcrt",
+        "feature_ddcrF4",
+        "feature_6mDiKi"
       ],
-      "disabled": true,
+      "name": "Features Icônes",
       "settings": {
-        "full_width": true,
-        "allow_transparent_header": true,
-        "show_initial_transition": false,
-        "image_size": "auto",
-        "controls_type": "numbers",
-        "transition_type": "fade_with_text",
+        "show_heading": false,
+        "heading": "Pourquoi nous choisir",
+        "subheading": "<p>Découvrez nos engagements et notre savoir-faire.</p>",
+        "heading_alignment": "center",
+        "columns_desktop": 4,
+        "card_alignment": "center",
+        "gap_size": 12,
+        "mobile_layout": "slider",
+        "show_peek": true,
+        "show_dots": false,
         "autoplay": true,
-        "cycle_speed": 6,
-        "background": "#f2f2f2",
-        "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
+        "autoplay_speed": 4,
+        "icon_size": 80,
+        "icon_size_mobile": 70,
+        "heading_size": 36,
+        "heading_size_mobile": 26,
+        "title_size": 18,
+        "title_size_mobile": 17,
+        "description_size": 15,
+        "bg_color": "#ffffff",
+        "heading_color": "#182b34",
+        "subheading_color": "#182b34",
+        "title_color": "#182b34",
+        "description_color": "#182b34",
+        "dot_color": "#d4d4d8",
+        "dot_active_color": "#18181b",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
       }
     },
     "featured_collection_FaCVqH": {
@@ -824,7 +855,7 @@
   },
   "order": [
     "herosection_EPn9TW",
-    "slideshow",
+    "beneficeicons_PfQa9U",
     "featured_collection_FaCVqH",
     "collection_slider_premium_bCcRFH",
     "installationservices_Veaix8",
