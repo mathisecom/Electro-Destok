@@ -401,6 +401,51 @@
         "mobile_padding_bottom": 40
       }
     },
+    "featured_collection_HdnrRw": {
+      "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}",
+        ".product-card__figure {position: relative;}",
+        ".product-card__figure::before,.product-card__figure::after {position: absolute; top: 8px; padding: 5px 10px; border-radius: 99px; font: 600 12px Arial; z-index: 5;}",
+        ".price-list {position: relative;}",
+        ".price-list sale-price,.price-list .sale-price {font-size: 22px; font-weight: 800;}"
+      ],
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "ue-monosplit-residentiel-r32-t09-38qhg009d8s-carrier",
+          "carrier-multi-split-r32-t042-5-sorties",
+          "carrier-multi-split-r32-t036-4-sorties",
+          "carrier-multi-split-r32-t028-4-sorties",
+          "carrier-multi-split-r32-t027-3-sorties",
+          "carrier-multi-split-r32-t021-3-sorties",
+          "carrier-multi-split-r32-t018-2-sorties",
+          "carrier-multi-split-r32-t014-2-sorties",
+          "carrier-mono-split-r32-t024",
+          "carrier-unite-interieure-murale-r32-t024",
+          "ui-mural-r32-t09-42qhg009d8s-carrier"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Nouveautés",
+        "content": "",
+        "link_url": "",
+        "link_text": "Découvrir",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
     "rich_text_RLtBbg": {
       "type": "rich-text",
       "blocks": {
@@ -487,9 +532,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -718,6 +763,7 @@
     "featured_collection_FaCVqH",
     "collection_slider_premium_bCcRFH",
     "sectionfacade_wKFDcj",
+    "featured_collection_HdnrRw",
     "rich_text_RLtBbg",
     "logoscroll_bXjfHT",
     "testimonials_gynNxQ",
