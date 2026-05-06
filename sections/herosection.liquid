@@ -35,6 +35,13 @@
     --hero-trust-label-color: {{ section.settings.trust_label_color }};
     --hero-trust-subtitle-color: {{ section.settings.trust_subtitle_color }};
     --hero-content-align: {{ section.settings.content_align }};
+    --hero-title-size-desktop: {{ section.settings.title_size_desktop }}px;
+    --hero-title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --hero-description-size-desktop: {{ section.settings.description_size_desktop }}px;
+    --hero-description-size-mobile: {{ section.settings.description_size_mobile }}px;
+    --hero-button-size: {{ section.settings.button_size }}px;
+    --hero-trust-label-size: {{ section.settings.trust_label_size }}px;
+    --hero-trust-subtitle-size: {{ section.settings.trust_subtitle_size }}px;
   "
 >
   {% comment %} ---- Image desktop (background) ---- {% endcomment %}
@@ -221,7 +228,7 @@
 
   /* ===== Titre ===== */
   .hero--{{ section.id }} .hero__title {
-    font-size: clamp(28px, 4.5vw, 56px);
+    font-size: var(--hero-title-size-desktop);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.01em;
@@ -236,7 +243,7 @@
 
   /* ===== Description ===== */
   .hero--{{ section.id }} .hero__description {
-    font-size: clamp(15px, 1.2vw, 18px);
+    font-size: var(--hero-description-size-desktop);
     line-height: 1.55;
     color: var(--hero-description-color);
     margin: 0 0 28px 0;
@@ -259,7 +266,7 @@
     border-radius: 8px;
     background-color: var(--hero-button-bg);
     color: var(--hero-button-text);
-    font-size: 16px;
+    font-size: var(--hero-button-size);
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s ease, transform 0.2s ease;
@@ -288,7 +295,7 @@
   .hero--{{ section.id }} .hero__trust-label {
     color: var(--hero-trust-label-color);
     font-weight: 700;
-    font-size: 15px;
+    font-size: var(--hero-trust-label-size);
   }
 
   .hero--{{ section.id }} .hero__trust-stars,
@@ -309,7 +316,7 @@
   }
 
   .hero--{{ section.id }} .hero__trust-subtitle {
-    font-size: 14px;
+    font-size: var(--hero-trust-subtitle-size);
     color: var(--hero-trust-subtitle-color);
     font-weight: 600;
     margin: 0;
@@ -344,12 +351,12 @@
     }
 
     .hero--{{ section.id }} .hero__title {
-      font-size: 26px;
+      font-size: var(--hero-title-size-mobile);
       margin-bottom: 14px;
     }
 
     .hero--{{ section.id }} .hero__description {
-      font-size: 14px;
+      font-size: var(--hero-description-size-mobile);
       margin-bottom: 20px;
     }
 
@@ -452,6 +459,80 @@
       "id": "highlight_color",
       "label": "Couleur des mots mis en avant",
       "default": "#7DD3B7"
+    },
+    {
+      "type": "header",
+      "content": "Tailles de texte"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Taille du titre (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Taille du titre (mobile)",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Taille de la description (desktop)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Taille de la description (mobile)",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Taille du texte du bouton",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "trust_label_size",
+      "label": "Taille de la mention (Excellent)",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "trust_subtitle_size",
+      "label": "Taille du texte sous le badge",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
     },
     {
       "type": "header",
