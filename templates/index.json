@@ -135,6 +135,34 @@
         "product_card_text_color": ""
       }
     },
+    "collection_slider_premium_bCcRFH": {
+      "type": "collection-slider-premium",
+      "name": "Collection slider premium",
+      "settings": {
+        "heading": "Nos Climatiseurs",
+        "collection": "mono-split",
+        "products_limit": 8,
+        "button_text": "Je découvre",
+        "show_badges": false,
+        "default_badge": "Bestseller",
+        "cards_desktop": 4,
+        "mobile_card_width": 68,
+        "card_height": 360,
+        "card_height_tablet": 390,
+        "card_height_mobile": 390,
+        "card_radius": 8,
+        "mobile_card_radius": 7,
+        "max_width": 1140,
+        "heading_size": 31,
+        "mobile_heading_size": 29,
+        "heading_color": "#1a1a1a",
+        "background_color": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 24
+      }
+    },
     "why_choose_hab3bB": {
       "type": "why-choose",
       "blocks": {
@@ -208,6 +236,7 @@
     "herosection_EPn9TW",
     "slideshow",
     "featured_collection_FaCVqH",
+    "collection_slider_premium_bCcRFH",
     "why_choose_hab3bB"
   ]
 }
