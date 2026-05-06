@@ -301,7 +301,7 @@
         "text_position": "center",
         "background": "",
         "background_gradient": "",
-        "text_color": ""
+        "text_color": "#182b34"
       }
     },
     "testimonials_gynNxQ": {
@@ -357,11 +357,11 @@
         "link_text": "",
         "background": "",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#182b34",
         "heading_color": "",
         "heading_gradient": "",
-        "testimonial_card_background": "",
-        "testimonial_card_text_color": ""
+        "testimonial_card_background": "#fdffff",
+        "testimonial_card_text_color": "#182b34"
       }
     },
     "why_choose_hab3bB": {
