@@ -294,6 +294,23 @@
         "mobile_side_padding": 14
       }
     },
+    "scrolling_text_egmEWQ": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#344e5b",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
+      }
+    },
     "installationservices_Veaix8": {
       "type": "installationservices",
       "blocks": {
@@ -850,6 +867,7 @@
     "beneficeicons_PfQa9U",
     "featured_collection_FaCVqH",
     "collection_slider_premium_bCcRFH",
+    "scrolling_text_egmEWQ",
     "installationservices_Veaix8",
     "sectionfacade_wKFDcj",
     "featured_collection_HdnrRw",
