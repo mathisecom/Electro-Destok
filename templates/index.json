@@ -372,8 +372,8 @@
         "title_size_mobile": 27,
         "padding_top": 80,
         "padding_bottom": 80,
-        "padding_top_mobile": 60,
-        "padding_bottom_mobile": 0
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 25
       }
     },
     "sectionfacade_wKFDcj": {
