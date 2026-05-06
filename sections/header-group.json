@@ -20,10 +20,18 @@
             "text": "Besoin d'aide ?  (appel gratuit) | Lun-Sam 9h-19h",
             "url": ""
           }
+        },
+        "message_gkqUhN": {
+          "type": "message",
+          "settings": {
+            "text": "Livraison Rapide en 5 à 7 jours",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_gkqUhN"
       ],
       "settings": {
         "enable_sticky": false,

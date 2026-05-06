@@ -21,6 +21,8 @@
         "overlay_color": "#000000",
         "overlay_opacity": 50,
         "content_align": "flex-start",
+        "content_vertical_desktop": "center",
+        "content_vertical_mobile": "flex-end",
         "title": "VOTRE STUDIO DE JARDIN\n**CLÉS EN MAIN** INSTALLÉ\nEN **5 JOURS** SEULEMENT",
         "text_color": "#ffffff",
         "highlight_color": "#dbeff2",
