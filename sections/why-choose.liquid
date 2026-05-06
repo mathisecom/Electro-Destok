@@ -1,0 +1,445 @@
+{% comment %}
+  Section : Pourquoi nous choisir
+  Description : Section personnalisable avec un titre, description, bouton CTA et 4 cartes (modifiables)
+  Pour l'installer : Theme > Edit Code > Sections > Add a new section > Nom : "why-choose-us"
+{% endcomment %}
+
+<section
+  class="why-choose-us"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="why-choose-us__container">
+    <div class="why-choose-us__inner">
+
+      {% comment %} ---- Colonne gauche : Titre + Description + Bouton ---- {% endcomment %}
+      <div class="why-choose-us__left">
+        <h2 class="why-choose-us__title" style="color: {{ section.settings.title_color }};">
+          {{ section.settings.title_part1 }}
+          <span class="why-choose-us__title-highlight" style="color: {{ section.settings.highlight_color }};">
+            {{ section.settings.title_highlight }}
+          </span>
+          {{ section.settings.title_part2 }}
+        </h2>
+
+        {% if section.settings.description != blank %}
+          <div class="why-choose-us__description" style="color: {{ section.settings.text_color }};">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="why-choose-us__button"
+            style="
+              background-color: {{ section.settings.button_bg }};
+              color: {{ section.settings.button_text_color }};
+            "
+          >
+            {{ section.settings.button_text }}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+
+      {% comment %} ---- Colonne droite : Grille de 4 cartes ---- {% endcomment %}
+      <div class="why-choose-us__right">
+        <div class="why-choose-us__grid">
+          {% for block in section.blocks %}
+            <div
+              class="why-choose-us__card"
+              {{ block.shopify_attributes }}
+              style="
+                background-color: {{ block.settings.card_bg }};
+                color: {{ block.settings.card_text_color }};
+              "
+            >
+              <div class="why-choose-us__icon">
+                {% if block.settings.icon_image != blank %}
+                  {{
+                    block.settings.icon_image
+                    | image_url: width: 120
+                    | image_tag: loading: 'lazy', width: 40, height: 40, alt: block.settings.title
+                  }}
+                {% elsif block.settings.icon_svg != blank %}
+                  {{ block.settings.icon_svg }}
+                {% else %}
+                  {% comment %} Icône par défaut {% endcomment %}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                {% endif %}
+              </div>
+
+              {% if block.settings.title != blank %}
+                <h3 class="why-choose-us__card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <p class="why-choose-us__card-description">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-choose-us {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .why-choose-us__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .why-choose-us__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  /* ---- Colonne gauche ---- */
+  .why-choose-us__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .why-choose-us__title-highlight {
+    font-weight: 700;
+  }
+
+  .why-choose-us__description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .why-choose-us__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .why-choose-us__button:hover {
+    transform: translateX(4px);
+    opacity: 0.9;
+  }
+
+  /* ---- Grille de cartes ---- */
+  .why-choose-us__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .why-choose-us__card {
+    padding: 32px 20px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .why-choose-us__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .why-choose-us__icon {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .why-choose-us__icon img,
+  .why-choose-us__icon svg {
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+  }
+
+  .why-choose-us__card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .why-choose-us__card-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* ---- Tablette ---- */
+  @media (max-width: 990px) {
+    .why-choose-us__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .why-choose-us__title {
+      font-size: 34px;
+    }
+  }
+
+  /* ---- Mobile ---- */
+  @media (max-width: 600px) {
+    .why-choose-us__container {
+      padding: 0 16px;
+    }
+
+    .why-choose-us__title {
+      font-size: 28px;
+    }
+
+    .why-choose-us__description {
+      font-size: 14px;
+    }
+
+    .why-choose-us__grid {
+      gap: 12px;
+    }
+
+    .why-choose-us__card {
+      padding: 24px 14px;
+    }
+
+    .why-choose-us__card-title {
+      font-size: 16px;
+    }
+
+    .why-choose-us__card-description {
+      font-size: 13px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Pourquoi nous choisir",
+  "tag": "section",
+  "class": "section-why-choose-us",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Apparence générale"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond de la section",
+      "default": "#F5F5F5"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacement haut",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacement bas",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "title_part1",
+      "label": "Titre — partie 1",
+      "default": "Pourquoi"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Titre — mot mis en avant",
+      "default": "choisir"
+    },
+    {
+      "type": "text",
+      "id": "title_part2",
+      "label": "Titre — partie 2",
+      "default": "notre marque ?"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#0A0A0A"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Couleur du mot mis en avant",
+      "default": "#999999"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Texte de description",
+      "default": "<p>Depuis plus de 20 ans, nous rendons le confort accessible à tous grâce à notre expertise et nos innovations. Choisir notre marque, c'est soutenir une marque engagée et tournée vers l'avenir.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "À propos"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Couleur de fond du bouton",
+      "default": "#E5E5E5"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Couleur du texte du bouton",
+      "default": "#0A0A0A"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Carte",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icône (image)",
+          "info": "Recommandé : PNG ou SVG transparent, 80x80px"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "Icône (code SVG)",
+          "info": "Alternative : collez le code SVG si vous n'utilisez pas d'image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de la carte",
+          "default": "Titre"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Une courte description du bénéfice présenté ici."
+        },
+        {
+          "type": "color",
+          "id": "card_bg",
+          "label": "Couleur de fond de la carte",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "card_text_color",
+          "label": "Couleur du texte de la carte",
+          "default": "#0A0A0A"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pourquoi nous choisir",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Marque française",
+            "description": "Une expertise locale au service de votre confort depuis plus de 20 ans."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Rapport qualité-prix",
+            "description": "Des produits performants à un prix accessible à tous."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Fiabilité",
+            "description": "Équipés des meilleurs composants du marché et garantis 2 ans."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Performance",
+            "description": "Grâce à une faible consommation énergétique A+++ / A++."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
