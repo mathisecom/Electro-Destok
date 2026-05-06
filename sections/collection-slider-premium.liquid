@@ -1,5 +1,5 @@
 {% comment %}
-  Section: Collection Slider Premium
+  Section: Collection Cards Slider Premium
 {% endcomment %}
 
 <section class="premium-collection-section section-{{ section.id }}">
@@ -11,55 +11,79 @@
       </h2>
     {% endif %}
 
-    {% assign selected_collection = section.settings.collection %}
-
-    {% if selected_collection != blank and selected_collection.products_count > 0 %}
+    {% if section.blocks.size > 0 %}
       <div class="premium-product-slider">
-        {% for product in selected_collection.products limit: section.settings.products_limit %}
-          <a href="{{ product.url }}" class="premium-product-card">
+        {% for block in section.blocks %}
+          {% assign card_collection = block.settings.collection %}
+          {% assign card_title = block.settings.title %}
+          {% assign card_description = block.settings.description %}
+          {% assign card_image = block.settings.image %}
 
-            {% if product.featured_image %}
+          <a
+            href="{% if card_collection != blank %}{{ card_collection.url }}{% else %}#{% endif %}"
+            class="premium-product-card"
+            {{ block.shopify_attributes }}
+          >
+
+            {% if card_image != blank %}
               <div
                 class="premium-product-image"
-                style="background-image: url('{{ product.featured_image | image_url: width: 900 }}');"
+                style="background-image: url('{{ card_image | image_url: width: 1000 }}');"
+              ></div>
+            {% elsif card_collection != blank and card_collection.featured_image != blank %}
+              <div
+                class="premium-product-image"
+                style="background-image: url('{{ card_collection.featured_image | image_url: width: 1000 }}');"
               ></div>
             {% endif %}
 
             <div class="premium-product-overlay"></div>
 
-            {% if section.settings.show_badges %}
+            {% if block.settings.show_badge and block.settings.badge != blank %}
               <div class="premium-product-badge">
-                {% if product.tags contains 'bestseller' %}
-                  Bestseller
-                {% elsif product.tags contains 'populaire' %}
-                  Populaire
-                {% elsif product.tags contains 'nouveaute' %}
-                  Nouveauté
-                {% elsif product.tags contains 'eco' %}
-                  Economies d’énergie
-                {% else %}
-                  {{ section.settings.default_badge }}
-                {% endif %}
+                {{ block.settings.badge }}
               </div>
             {% endif %}
 
             <div class="premium-product-content">
-              <h3 class="premium-product-title">
-                {{ product.title }}
+              <h3
+                class="premium-product-title"
+                style="
+                  font-size: {{ block.settings.title_size }}px;
+                "
+              >
+                {% if card_title != blank %}
+                  {{ card_title }}
+                {% elsif card_collection != blank %}
+                  {{ card_collection.title }}
+                {% else %}
+                  Titre de la collection
+                {% endif %}
               </h3>
 
-              <p class="premium-product-description">
-                {% if product.metafields.custom.short_description != blank %}
-                  {{ product.metafields.custom.short_description }}
-                {% else %}
-                  {{ product.description | strip_html | truncate: 85 }}
-                {% endif %}
-              </p>
+              {% if block.settings.show_description %}
+                <p
+                  class="premium-product-description"
+                  style="
+                    font-size: {{ block.settings.description_size }}px;
+                  "
+                >
+                  {% if card_description != blank %}
+                    {{ card_description }}
+                  {% elsif card_collection != blank and card_collection.description != blank %}
+                    {{ card_collection.description | strip_html | truncate: 90 }}
+                  {% else %}
+                    Ajoute une description dans les paramètres de cette card.
+                  {% endif %}
+                </p>
+              {% endif %}
 
-              <div class="premium-product-button">
-                {{ section.settings.button_text }}
-                <span>→</span>
-              </div>
+              {% if section.settings.show_button %}
+                <div class="premium-product-button">
+                  {{ section.settings.button_text }}
+                  <span>→</span>
+                </div>
+              {% endif %}
             </div>
 
           </a>
@@ -67,7 +91,7 @@
       </div>
     {% else %}
       <p class="premium-empty-message">
-        Sélectionne une collection dans les paramètres de la section.
+        Ajoute des cards dans les paramètres de la section.
       </p>
     {% endif %}
 
@@ -88,10 +112,10 @@
   }
 
   .section-{{ section.id }} .premium-collection-title {
-    margin: 0 0 28px;
+    margin: 0 0 {{ section.settings.heading_margin_bottom }}px;
     font-size: {{ section.settings.heading_size }}px;
     line-height: 1.1;
-    font-weight: 800;
+    font-weight: {{ section.settings.heading_weight }};
     color: {{ section.settings.heading_color }};
     letter-spacing: -0.04em;
   }
@@ -99,14 +123,14 @@
   .section-{{ section.id }} .premium-product-slider {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 36px) / {{ section.settings.cards_desktop }});
-    gap: 12px;
+    grid-auto-columns: calc((100% - ({{ section.settings.cards_gap }}px * ({{ section.settings.cards_desktop }} - 1))) / {{ section.settings.cards_desktop }});
+    gap: {{ section.settings.cards_gap }}px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-padding-left: 0;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
 
   .section-{{ section.id }} .premium-product-slider::-webkit-scrollbar {
@@ -129,6 +153,13 @@
     scroll-snap-align: start;
     isolation: isolate;
     background: #1f1a16;
+    box-shadow: 0 {{ section.settings.shadow_y }}px {{ section.settings.shadow_blur }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .section-{{ section.id }} .premium-product-card:hover {
+    transform: translateY(-{{ section.settings.hover_lift }}px);
+    box-shadow: 0 {{ section.settings.shadow_y | plus: 4 }}px {{ section.settings.shadow_blur | plus: 10 }}px rgba(0, 0, 0, {{ section.settings.shadow_opacity | plus: 6 | divided_by: 100.0 }});
   }
 
   .section-{{ section.id }} .premium-product-image {
@@ -141,7 +172,7 @@
   }
 
   .section-{{ section.id }} .premium-product-card:hover .premium-product-image {
-    transform: scale(1.05);
+    transform: scale({{ section.settings.image_zoom | divided_by: 100.0 }});
   }
 
   .section-{{ section.id }} .premium-product-overlay {
@@ -149,23 +180,23 @@
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.08) 0%,
-      rgba(0, 0, 0, 0.18) 42%,
-      rgba(0, 0, 0, 0.62) 100%
+      rgba(0, 0, 0, {{ section.settings.overlay_top | divided_by: 100.0 }}) 0%,
+      rgba(0, 0, 0, {{ section.settings.overlay_middle | divided_by: 100.0 }}) 45%,
+      rgba(0, 0, 0, {{ section.settings.overlay_bottom | divided_by: 100.0 }}) 100%
     );
     z-index: -2;
   }
 
   .section-{{ section.id }} .premium-product-badge {
     position: absolute;
-    top: 22px;
-    left: 22px;
-    padding: 7px 14px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #fff;
-    font-size: 11px;
+    top: {{ section.settings.badge_top }}px;
+    left: {{ section.settings.badge_left }}px;
+    padding: {{ section.settings.badge_padding_y }}px {{ section.settings.badge_padding_x }}px;
+    border-radius: {{ section.settings.badge_radius }}px;
+    background: {{ section.settings.badge_background }};
+    border: 1px solid {{ section.settings.badge_border_color }};
+    color: {{ section.settings.badge_text_color }};
+    font-size: {{ section.settings.badge_size }}px;
     line-height: 1;
     font-weight: 800;
     backdrop-filter: blur(8px);
@@ -176,46 +207,44 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 24px 20px 18px;
+    padding: {{ section.settings.content_padding_top }}px {{ section.settings.content_padding_x }}px {{ section.settings.content_padding_bottom }}px;
   }
 
   .section-{{ section.id }} .premium-product-title {
-    margin: 0 0 12px;
-    font-size: 25px;
+    margin: 0 0 {{ section.settings.title_margin_bottom }}px;
     line-height: 1.05;
-    font-weight: 900;
-    color: #fff;
+    font-weight: {{ section.settings.card_title_weight }};
+    color: {{ section.settings.card_title_color }};
     letter-spacing: -0.05em;
   }
 
   .section-{{ section.id }} .premium-product-description {
-    margin: 0 0 28px;
-    font-size: 13px;
+    margin: 0 0 {{ section.settings.description_margin_bottom }}px;
     line-height: 1.45;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.96);
+    font-weight: {{ section.settings.description_weight }};
+    color: {{ section.settings.description_color }};
   }
 
   .section-{{ section.id }} .premium-product-button {
-    width: fit-content;
+    width: {% if section.settings.button_full_width_desktop %}100%{% else %}fit-content{% endif %};
     min-width: 118px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
-    padding: 12px 20px;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.28);
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    color: #fff;
-    font-size: 13px;
+    background: {{ section.settings.button_background }};
+    border: 1px solid {{ section.settings.button_border_color }};
+    color: {{ section.settings.button_text_color }};
+    font-size: {{ section.settings.button_size }}px;
     font-weight: 800;
     line-height: 1;
     transition: background 0.25s ease, transform 0.25s ease;
   }
 
   .section-{{ section.id }} .premium-product-card:hover .premium-product-button {
-    background: rgba(255, 255, 255, 0.38);
+    background: {{ section.settings.button_background_hover }};
     transform: translateY(-2px);
   }
 
@@ -231,7 +260,7 @@
 
   @media screen and (max-width: 989px) {
     .section-{{ section.id }} .premium-product-slider {
-      grid-auto-columns: 44vw;
+      grid-auto-columns: {{ section.settings.tablet_card_width }}vw;
     }
 
     .section-{{ section.id }} .premium-product-card {
@@ -246,18 +275,18 @@
     }
 
     .section-{{ section.id }} .premium-collection-wrapper {
-      padding: 0 14px;
+      padding: 0 {{ section.settings.mobile_side_padding }}px;
     }
 
     .section-{{ section.id }} .premium-collection-title {
       font-size: {{ section.settings.mobile_heading_size }}px;
-      margin-bottom: 22px;
+      margin-bottom: {{ section.settings.mobile_heading_margin_bottom }}px;
     }
 
     .section-{{ section.id }} .premium-product-slider {
       grid-auto-columns: {{ section.settings.mobile_card_width }}vw;
-      gap: 8px;
-      padding-right: 14px;
+      gap: {{ section.settings.mobile_cards_gap }}px;
+      padding-right: {{ section.settings.mobile_side_padding }}px;
     }
 
     .section-{{ section.id }} .premium-product-card {
@@ -266,39 +295,39 @@
     }
 
     .section-{{ section.id }} .premium-product-badge {
-      top: 24px;
-      left: 25px;
-      padding: 7px 14px;
-      font-size: 11px;
+      top: {{ section.settings.mobile_badge_top }}px;
+      left: {{ section.settings.mobile_badge_left }}px;
+      font-size: {{ section.settings.mobile_badge_size }}px;
     }
 
     .section-{{ section.id }} .premium-product-content {
-      padding: 22px 12px 14px;
+      padding: {{ section.settings.mobile_content_padding_top }}px {{ section.settings.mobile_content_padding_x }}px {{ section.settings.mobile_content_padding_bottom }}px;
     }
 
     .section-{{ section.id }} .premium-product-title {
-      font-size: 23px;
-      margin-bottom: 12px;
+      line-height: 1.05;
     }
 
     .section-{{ section.id }} .premium-product-description {
-      font-size: 15px;
       line-height: 1.45;
-      margin-bottom: 30px;
     }
 
     .section-{{ section.id }} .premium-product-button {
-      width: 100%;
-      padding: 16px 20px;
-      font-size: 14px;
+      width: {% if section.settings.button_full_width_mobile %}100%{% else %}fit-content{% endif %};
+      padding: {{ section.settings.mobile_button_padding_y }}px {{ section.settings.mobile_button_padding_x }}px;
+      font-size: {{ section.settings.mobile_button_size }}px;
     }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Collection slider premium",
+  "name": "Collection cards slider",
   "settings": [
+    {
+      "type": "header",
+      "content": "Titre de la section"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -306,36 +335,82 @@
       "default": "Nos climatiseurs"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection à afficher"
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre PC",
+      "min": 20,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "default": 31
     },
     {
       "type": "range",
-      "id": "products_limit",
-      "label": "Nombre de produits",
-      "min": 2,
-      "max": 16,
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 18,
+      "max": 50,
       "step": 1,
-      "default": 8
+      "unit": "px",
+      "default": 29
     },
     {
-      "type": "text",
-      "id": "button_text",
-      "label": "Texte du bouton",
-      "default": "Je découvre"
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse du titre",
+      "default": "800",
+      "options": [
+        {
+          "value": "500",
+          "label": "Moyen"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ]
     },
     {
-      "type": "checkbox",
-      "id": "show_badges",
-      "label": "Afficher les badges",
-      "default": true
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur du titre",
+      "default": "#8f969d"
     },
     {
-      "type": "text",
-      "id": "default_badge",
-      "label": "Badge par défaut",
-      "default": "Bestseller"
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Espace sous le titre PC",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_margin_bottom",
+      "label": "Espace sous le titre mobile",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Slider"
     },
     {
       "type": "range",
@@ -345,6 +420,26 @@
       "max": 5,
       "step": 1,
       "default": 4
+    },
+    {
+      "type": "range",
+      "id": "cards_gap",
+      "label": "Espace entre les cartes PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "tablet_card_width",
+      "label": "Largeur carte tablette",
+      "min": 35,
+      "max": 80,
+      "step": 1,
+      "unit": "vw",
+      "default": 44
     },
     {
       "type": "range",
@@ -358,10 +453,24 @@
     },
     {
       "type": "range",
+      "id": "mobile_cards_gap",
+      "label": "Espace entre les cartes mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Cartes"
+    },
+    {
+      "type": "range",
       "id": "card_height",
       "label": "Hauteur carte PC",
       "min": 280,
-      "max": 620,
+      "max": 700,
       "step": 10,
       "unit": "px",
       "default": 360
@@ -371,7 +480,7 @@
       "id": "card_height_tablet",
       "label": "Hauteur carte tablette",
       "min": 280,
-      "max": 620,
+      "max": 700,
       "step": 10,
       "unit": "px",
       "default": 390
@@ -381,7 +490,7 @@
       "id": "card_height_mobile",
       "label": "Hauteur carte mobile",
       "min": 300,
-      "max": 680,
+      "max": 760,
       "step": 10,
       "unit": "px",
       "default": 390
@@ -391,7 +500,7 @@
       "id": "card_radius",
       "label": "Arrondi carte PC",
       "min": 0,
-      "max": 40,
+      "max": 50,
       "step": 1,
       "unit": "px",
       "default": 8
@@ -401,10 +510,474 @@
       "id": "mobile_card_radius",
       "label": "Arrondi carte mobile",
       "min": 0,
-      "max": 40,
+      "max": 50,
       "step": 1,
       "unit": "px",
       "default": 7
+    },
+    {
+      "type": "range",
+      "id": "image_zoom",
+      "label": "Zoom image au survol",
+      "min": 100,
+      "max": 120,
+      "step": 1,
+      "unit": "%",
+      "default": 105
+    },
+    {
+      "type": "header",
+      "content": "Ombre des cartes"
+    },
+    {
+      "type": "range",
+      "id": "shadow_y",
+      "label": "Décalage vertical de l’ombre",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "label": "Flou de l’ombre",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Opacité de l’ombre",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "label": "Montée au survol",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Overlay sombre"
+    },
+    {
+      "type": "range",
+      "id": "overlay_top",
+      "label": "Opacité haut",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "overlay_middle",
+      "label": "Opacité milieu",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "unit": "%",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "overlay_bottom",
+      "label": "Opacité bas",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 62
+    },
+    {
+      "type": "header",
+      "content": "Texte des cartes"
+    },
+    {
+      "type": "select",
+      "id": "card_title_weight",
+      "label": "Graisse titre card",
+      "default": "900",
+      "options": [
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Couleur titre card",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Espace sous titre card",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "description_weight",
+      "label": "Graisse description",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Moyen"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Couleur description",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "description_margin_bottom",
+      "label": "Espace sous description",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "content_padding_top",
+      "label": "Padding haut contenu PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_padding_x",
+      "label": "Padding gauche/droite contenu PC",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_padding_bottom",
+      "label": "Padding bas contenu PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_top",
+      "label": "Padding haut contenu mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_x",
+      "label": "Padding gauche/droite contenu mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding_bottom",
+      "label": "Padding bas contenu mobile",
+      "min": 0,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "range",
+      "id": "badge_top",
+      "label": "Position badge haut PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "badge_left",
+      "label": "Position badge gauche PC",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_top",
+      "label": "Position badge haut mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_left",
+      "label": "Position badge gauche mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Taille badge PC",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_badge_size",
+      "label": "Taille badge mobile",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_y",
+      "label": "Padding vertical badge",
+      "min": 2,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_x",
+      "label": "Padding horizontal badge",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "label": "Arrondi badge",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Fond badge",
+      "default": "rgba(255,255,255,0.22)"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Bordure badge",
+      "default": "rgba(255,255,255,0.35)"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Couleur texte badge",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Afficher le bouton",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Je découvre"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width_desktop",
+      "label": "Bouton pleine largeur sur PC",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width_mobile",
+      "label": "Bouton pleine largeur sur mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Taille texte bouton PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_size",
+      "label": "Taille texte bouton mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "label": "Padding vertical bouton PC",
+      "min": 6,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Padding horizontal bouton PC",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_y",
+      "label": "Padding vertical bouton mobile",
+      "min": 6,
+      "max": 34,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_x",
+      "label": "Padding horizontal bouton mobile",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond bouton",
+      "default": "rgba(255,255,255,0.28)"
+    },
+    {
+      "type": "color",
+      "id": "button_background_hover",
+      "label": "Fond bouton au survol",
+      "default": "rgba(255,255,255,0.38)"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Bordure bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Couleur texte bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Espacements section"
     },
     {
       "type": "range",
@@ -417,32 +990,6 @@
       "default": 1140
     },
     {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Taille titre PC",
-      "min": 20,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 31
-    },
-    {
-      "type": "range",
-      "id": "mobile_heading_size",
-      "label": "Taille titre mobile",
-      "min": 20,
-      "max": 44,
-      "step": 1,
-      "unit": "px",
-      "default": 29
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Couleur du titre",
-      "default": "#8f969d"
-    },
-    {
       "type": "color",
       "id": "background_color",
       "label": "Couleur de fond",
@@ -453,7 +1000,7 @@
       "id": "padding_top",
       "label": "Marge haute PC",
       "min": 0,
-      "max": 120,
+      "max": 140,
       "step": 4,
       "unit": "px",
       "default": 32
@@ -463,7 +1010,7 @@
       "id": "padding_bottom",
       "label": "Marge basse PC",
       "min": 0,
-      "max": 120,
+      "max": 140,
       "step": 4,
       "unit": "px",
       "default": 32
@@ -473,7 +1020,7 @@
       "id": "mobile_padding_top",
       "label": "Marge haute mobile",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "default": 24
@@ -483,15 +1030,126 @@
       "id": "mobile_padding_bottom",
       "label": "Marge basse mobile",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Padding côtés mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Card collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection liée à cette card"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image personnalisée"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_badge",
+          "label": "Afficher le badge",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Texte du badge",
+          "default": "Bestseller"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre personnalisé"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "label": "Taille du titre",
+          "min": 14,
+          "max": 44,
+          "step": 1,
+          "unit": "px",
+          "default": 25
+        },
+        {
+          "type": "checkbox",
+          "id": "show_description",
+          "label": "Afficher la description",
+          "default": true
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description personnalisée",
+          "default": "Climatiseur réversible avec unité extérieure"
+        },
+        {
+          "type": "range",
+          "id": "description_size",
+          "label": "Taille de la description",
+          "min": 10,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "default": 13
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Collection slider premium"
+      "name": "Collection cards slider",
+      "blocks": [
+        {
+          "type": "collection_card",
+          "settings": {
+            "badge": "Bestseller",
+            "title": "Climatiseurs split",
+            "description": "Climatiseur réversible avec unité extérieure"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "badge": "Economies d’énergie",
+            "title": "Climatiseur A+++",
+            "description": "Performance énergétique maximale"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "badge": "Populaire",
+            "title": "Climatiseur Monobloc",
+            "description": "Climatiseur réversible sans unité extérieure"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "badge": "Nouveauté",
+            "title": "Climatiseur mobile",
+            "description": "Climatiseur 4 en 1 sans montage complexe"
+          }
+        }
+      ]
     }
   ]
 }
