@@ -30,6 +30,7 @@
     --feat-title-size-mobile: {{ section.settings.title_size_mobile }}px;
     --feat-desc-size: {{ section.settings.description_size }}px;
     --feat-card-align: {{ section.settings.card_alignment }};
+    --feat-mobile-cards: {{ section.settings.cards_per_view_mobile }};
   }
 </style>
 
@@ -336,7 +337,7 @@
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      gap: 0;
+      gap: 12px;
       padding: 0 16px;
     }
 
@@ -345,23 +346,15 @@
     }
 
     .features-section[data-mobile-mode="slider"] .feature-card {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
+      flex: 0 0 calc((100% - 12px * (var(--feat-mobile-cards, 2) - 1)) / var(--feat-mobile-cards, 2));
+      scroll-snap-align: start;
       scroll-snap-stop: always;
+      margin: 0;
     }
 
-    /* Peek mode: show edge of next card */
-    .features-section[data-mobile-mode="slider"][data-show-peek="true"] .features-grid {
-      padding: 0 32px 0 16px;
-    }
-
+    /* Peek mode: shorten cards so edge of next one shows */
     .features-section[data-mobile-mode="slider"][data-show-peek="true"] .feature-card {
-      flex: 0 0 88%;
-      margin-right: 12px;
-    }
-
-    .features-section[data-mobile-mode="slider"][data-show-peek="true"] .feature-card:last-child {
-      margin-right: 0;
+      flex: 0 0 calc((100% - 12px * (var(--feat-mobile-cards, 2) - 1) - 30px) / var(--feat-mobile-cards, 2));
     }
 
     /* Stack mode on mobile */
@@ -482,6 +475,16 @@
         { "value": "grid", "label": "Empilé" }
       ],
       "default": "slider"
+    },
+    {
+      "type": "range",
+      "id": "cards_per_view_mobile",
+      "label": "Cartes visibles sur mobile",
+      "info": "Combien de cartes voir en même temps dans le slider",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
     },
     {
       "type": "checkbox",

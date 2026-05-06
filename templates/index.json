@@ -72,20 +72,12 @@
             "title": "Installation en 5 jours",
             "description": "Sans chantier lourd,\nSans perte de temps"
           }
-        },
-        "feature_6mDiKi": {
-          "type": "feature",
-          "settings": {
-            "title": "+4000 clients installés",
-            "description": "Des clients satisfaits\npartout en France"
-          }
         }
       },
       "block_order": [
         "feature_KxmkgV",
         "feature_yhUcrt",
-        "feature_ddcrF4",
-        "feature_6mDiKi"
+        "feature_ddcrF4"
       ],
       "name": "Features Icônes",
       "settings": {
@@ -93,9 +85,9 @@
         "heading": "Pourquoi nous choisir",
         "subheading": "<p>Découvrez nos engagements et notre savoir-faire.</p>",
         "heading_alignment": "center",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "card_alignment": "center",
-        "gap_size": 12,
+        "gap_size": 0,
         "mobile_layout": "slider",
         "show_peek": true,
         "show_dots": false,
