@@ -12,10 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "settings": {}
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -72,8 +68,8 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
@@ -82,7 +78,6 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "badges",
         "price",
@@ -99,8 +94,8 @@
         "show_fixed_add_to_cart": true,
         "desktop_media_width": 55,
         "desktop_media_layout": "carousel_thumbnails_left",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "thumbnails",
         "enable_video_autoplay": false,
         "enable_video_looping": true,
         "enable_image_zoom": true,
