@@ -278,21 +278,21 @@
           "type": "feature",
           "settings": {
             "icon": "users",
-            "text": "Création de logos inoubliables et distinctifs"
+            "text": "Pose professionnelle par des techniciens qualifiés."
           }
         },
         "feature_C9mmDg": {
           "type": "feature",
           "settings": {
             "icon": "diamond",
-            "text": "Création de chartes graphiques élégantes"
+            "text": "Mise en route avec vérification complète."
           }
         },
         "feature_XMcQ4L": {
           "type": "feature",
           "settings": {
             "icon": "typography",
-            "text": "Sélection de typographies percutantes"
+            "text": "Choix de la puissance adaptée à votre logement."
           }
         }
       },
@@ -326,10 +326,10 @@
         "button_color_from": "#344e5b",
         "button_color_to": "#182b34",
         "button_text_color": "#ffffff",
-        "image_bg_color": "#FFD93D",
+        "image_bg_color": "#f2f2f2",
         "decoration_color": "#344e5b",
-        "title_size": 44,
-        "title_size_mobile": 28,
+        "title_size": 40,
+        "title_size_mobile": 29,
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 60,
