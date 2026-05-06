@@ -142,6 +142,99 @@
         "input_text_color": ""
       }
     },
+    "rich_text_8xEmKb": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_nfG4Pn": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
+        "heading_d3A8rk": {
+          "type": "heading",
+          "settings": {
+            "text": "+3,000 ClientsSatisfaits",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_nfG4Pn",
+        "heading_d3A8rk"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#182b34"
+      }
+    },
+    "testimonials_TwVHi6": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_yeTLbH": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "John S.",
+            "title": "Testimonial 1",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_f4e4n6": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Testimonial 2",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_NzafFr": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Joshua A.",
+            "title": "Testimonial 3",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_yeTLbH",
+        "testimonial_f4e4n6",
+        "testimonial_NzafFr"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "#fdffff",
+        "testimonial_card_text_color": "#182b34"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -170,6 +263,8 @@
   },
   "order": [
     "main",
+    "rich_text_8xEmKb",
+    "testimonials_TwVHi6",
     "related-products"
   ]
 }
