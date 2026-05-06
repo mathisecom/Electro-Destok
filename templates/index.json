@@ -291,7 +291,7 @@
         "feature_XMcQ4L": {
           "type": "feature",
           "settings": {
-            "icon": "rocket",
+            "icon": "lightbulb",
             "text": "Choix de la puissance adaptée à votre logement."
           }
         }
@@ -328,8 +328,8 @@
         "button_text_color": "#ffffff",
         "image_bg_color": "#f2f2f2",
         "decoration_color": "#344e5b",
-        "title_size": 40,
-        "title_size_mobile": 29,
+        "title_size": 34,
+        "title_size_mobile": 27,
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 60,
