@@ -417,8 +417,8 @@
       "name": "Pourquoi nous choisir",
       "settings": {
         "bg_color": "#fdffff",
-        "padding_top": 60,
-        "padding_bottom": 60,
+        "padding_top": 36,
+        "padding_bottom": 36,
         "title_part1": "Pourquoi",
         "title_highlight": "choisir",
         "title_part2": "Electro Destok ?",
@@ -431,6 +431,59 @@
         "button_bg": "#344e5b",
         "button_text_color": "#ffffff"
       }
+    },
+    "faq_k76r7L": {
+      "type": "faq",
+      "blocks": {
+        "item_AyJarA": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "item_WFAKeJ": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "item_WWKQ4B": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_AyJarA",
+        "item_WFAKeJ",
+        "item_WWKQ4B"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Questions Fréquentes",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#182b34",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": "#182b34"
+      }
     }
   },
   "order": [
@@ -440,6 +493,7 @@
     "collection_slider_premium_bCcRFH",
     "rich_text_RLtBbg",
     "testimonials_gynNxQ",
-    "why_choose_hab3bB"
+    "why_choose_hab3bB",
+    "faq_k76r7L"
   ]
 }
