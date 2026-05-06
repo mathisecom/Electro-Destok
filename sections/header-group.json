@@ -16,8 +16,9 @@
       "blocks": {
         "message": {
           "type": "message",
+          "disabled": true,
           "settings": {
-            "text": "Announce something here",
+            "text": "Besoin d'aide ?  (appel gratuit) | Lun-Sam 9h-19h",
             "url": ""
           }
         }
