@@ -9,6 +9,35 @@
  */
 {
   "sections": {
+    "herosection_EPn9TW": {
+      "type": "herosection",
+      "name": "Hero Banner",
+      "settings": {
+        "image_alt": "",
+        "height_desktop": 560,
+        "overlay_color": "#000000",
+        "overlay_opacity": 50,
+        "content_align": "flex-start",
+        "title": "VOTRE STUDIO DE JARDIN\n**CLÉS EN MAIN** INSTALLÉ\nEN **5 JOURS** SEULEMENT",
+        "text_color": "#FFFFFF",
+        "highlight_color": "#dbeff2",
+        "description": "<p>Leader depuis 12 ans, notre marque conçoit et installe des studios de jardin en bois <strong>sur-mesure, de 11 à 50m²</strong>.</p>",
+        "description_color": "#FFFFFF",
+        "button_text": "DÉCOUVRIR",
+        "button_link": "",
+        "button_bg": "#344e5b",
+        "button_bg_hover": "#344e5bff",
+        "button_text_color": "#FFFFFF",
+        "show_trust": true,
+        "trust_label": "Excellent",
+        "trust_label_color": "#FFFFFF",
+        "rating_image": "shopify://shop_images/rating.svg",
+        "logo_image": "shopify://shop_images/trustpilot.svg",
+        "trust_subtitle": "4.8 sur 5 (+3,000 avis)",
+        "trust_subtitle_color": "#FFFFFF",
+        "mobile_bg_color": "#0a0a0a"
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -88,8 +117,8 @@
             "icon_svg": "",
             "title": "Marque française",
             "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_f4Wzb8": {
@@ -98,8 +127,8 @@
             "icon_svg": "",
             "title": "Rapport qualité-prix",
             "description": "Des produits performants à un prix accessible à tous.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_73Cme4": {
@@ -108,8 +137,8 @@
             "icon_svg": "",
             "title": "Fiabilité",
             "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_c7NMjE": {
@@ -118,8 +147,8 @@
             "icon_svg": "",
             "title": "Performance",
             "description": "Grâce à une faible consommation énergétique A+++ / A++.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         }
       },
@@ -137,18 +166,19 @@
         "title_part1": "Pourquoi",
         "title_highlight": "choisir",
         "title_part2": "notre marque ?",
-        "title_color": "#182b34ff",
-        "highlight_color": "#344e5bff",
+        "title_color": "#182b34",
+        "highlight_color": "#344e5b",
         "description": "<p>Depuis plus de 20 ans, nous rendons le confort accessible à tous grâce à notre expertise et nos innovations. Choisir notre marque, c'est soutenir une marque engagée et tournée vers l'avenir.</p>",
-        "text_color": "#182b34ff",
+        "text_color": "#182b34",
         "button_text": "À propos",
         "button_link": "",
-        "button_bg": "#344e5bff",
+        "button_bg": "#344e5b",
         "button_text_color": "#ffffff"
       }
     }
   },
   "order": [
+    "herosection_EPn9TW",
     "slideshow",
     "featured_collection_FaCVqH",
     "why_choose_hab3bB"
