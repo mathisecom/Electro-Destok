@@ -287,9 +287,9 @@
         "button_text_color": "#ffffff",
         "max_width": 1600,
         "background_color": "#ffffff",
-        "padding_top": 32,
+        "padding_top": 16,
         "padding_bottom": 32,
-        "mobile_padding_top": 24,
+        "mobile_padding_top": 16,
         "mobile_padding_bottom": 24,
         "mobile_side_padding": 14
       }
