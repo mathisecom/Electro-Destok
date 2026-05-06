@@ -13,6 +13,7 @@
       "type": "herosection",
       "name": "Hero Banner",
       "settings": {
+        "image_desktop": "shopify://shop_images/air-conditioner-40whh-milieu-21-9.avif",
         "image_alt": "",
         "height_desktop": 560,
         "overlay_color": "#000000",
@@ -42,7 +43,7 @@
         "logo_image": "shopify://shop_images/trustpilot.svg",
         "trust_subtitle": "4.8 sur 5 (+3,000 avis)",
         "trust_subtitle_color": "#ffffff",
-        "mobile_bg_color": "#0a0a0a"
+        "mobile_bg_color": "#182b34"
       }
     },
     "slideshow": {
