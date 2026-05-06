@@ -146,7 +146,7 @@
           "type": "feature",
           "settings": {
             "icon_svg": "",
-            "title": "Rapport qualité-prix",
+            "title": "Rapport Qualité-Prix",
             "description": "Des produits performants à un prix accessible à tous.",
             "card_bg": "#ffffff",
             "card_text_color": "#0a0a0a"

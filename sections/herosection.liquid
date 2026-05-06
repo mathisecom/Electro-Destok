@@ -35,6 +35,8 @@
     --hero-trust-label-color: {{ section.settings.trust_label_color }};
     --hero-trust-subtitle-color: {{ section.settings.trust_subtitle_color }};
     --hero-content-align: {{ section.settings.content_align }};
+    --hero-content-vertical-desktop: {{ section.settings.content_vertical_desktop }};
+    --hero-content-vertical-mobile: {{ section.settings.content_vertical_mobile }};
     --hero-title-size-desktop: {{ section.settings.title_size_desktop }}px;
     --hero-title-size-mobile: {{ section.settings.title_size_mobile }}px;
     --hero-description-size-desktop: {{ section.settings.description_size_desktop }}px;
@@ -209,7 +211,7 @@
     padding: 80px 24px;
     min-height: var(--hero-min-height-desktop);
     display: flex;
-    align-items: center;
+    align-items: var(--hero-content-vertical-desktop, center);
     justify-content: var(--hero-content-align, flex-start);
   }
 
@@ -333,6 +335,7 @@
     .hero--{{ section.id }} .hero__container {
       min-height: var(--hero-min-height-mobile);
       padding: 40px 20px;
+      align-items: var(--hero-content-vertical-mobile, center);
     }
 
     .hero--{{ section.id }} .hero__content {
@@ -428,13 +431,35 @@
     {
       "type": "select",
       "id": "content_align",
-      "label": "Position du contenu (desktop)",
+      "label": "Position horizontale (desktop)",
       "options": [
         { "value": "flex-start", "label": "Gauche" },
         { "value": "center", "label": "Centre" },
         { "value": "flex-end", "label": "Droite" }
       ],
       "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_desktop",
+      "label": "Position verticale (desktop)",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Bas" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_mobile",
+      "label": "Position verticale (mobile)",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Bas" }
+      ],
+      "default": "flex-end"
     },
     {
       "type": "header",
