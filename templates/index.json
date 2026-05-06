@@ -55,22 +55,22 @@
         "feature_KxmkgV": {
           "type": "feature",
           "settings": {
-            "title": "12 ans d'expérience",
-            "description": "Fabrication française,\nExpertise éprouvée"
+            "title": "Prix Direct Fournisseur",
+            "description": "Climatiseurs Carrier sans intermédiaire, au meilleur prix."
           }
         },
         "feature_yhUcrt": {
           "type": "feature",
           "settings": {
-            "title": "100% clés en main",
-            "description": "De l'étude à la pose,\non s'occupe de tout"
+            "title": "Stock Disponible Rapidement",
+            "description": "Livraison rapide partout en France."
           }
         },
         "feature_ddcrF4": {
           "type": "feature",
           "settings": {
-            "title": "Installation en 5 jours",
-            "description": "Sans chantier lourd,\nSans perte de temps"
+            "title": "Matériel Carrier Original",
+            "description": "Climatiseurs Carrier fiables, performants et authentiques."
           }
         }
       },
