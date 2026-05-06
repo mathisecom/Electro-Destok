@@ -23,9 +23,9 @@
   class="hero hero--{{ section.id }}"
   style="
     --hero-min-height-desktop: {{ section.settings.height_desktop }}px;
+    --hero-min-height-mobile: {{ section.settings.height_mobile }}px;
     --hero-overlay-color: {{ section.settings.overlay_color }};
     --hero-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
-    --hero-mobile-bg: {{ section.settings.mobile_bg_color }};
     --hero-text-color: {{ section.settings.text_color }};
     --hero-highlight-color: {{ section.settings.highlight_color }};
     --hero-description-color: {{ section.settings.description_color }};
@@ -44,33 +44,28 @@
     --hero-trust-subtitle-size: {{ section.settings.trust_subtitle_size }}px;
   "
 >
-  {% comment %} ---- Image desktop (background) ---- {% endcomment %}
+  {% comment %} ---- Image de fond desktop ---- {% endcomment %}
   {%- if section.settings.image_desktop != blank -%}
     <div
-      class="hero__bg"
+      class="hero__bg hero__bg--desktop"
       style="background-image: url({{ section.settings.image_desktop | image_url: width: 2400 }});"
       role="img"
       aria-label="{{ section.settings.image_alt | default: section.settings.title | strip_html | escape }}"
     ></div>
   {%- endif -%}
 
-  {% comment %} ---- Image mobile (au-dessus du contenu) ---- {% endcomment %}
-  <div class="hero__mobile-media">
-    {%- assign mobile_img = section.settings.image_mobile | default: section.settings.image_desktop -%}
-    {%- if mobile_img != blank -%}
-      <img
-        src="{{ mobile_img | image_url: width: 900 }}"
-        srcset="{{ mobile_img | image_url: width: 600 }} 600w, {{ mobile_img | image_url: width: 900 }} 900w, {{ mobile_img | image_url: width: 1200 }} 1200w"
-        sizes="100vw"
-        alt="{{ section.settings.image_alt | default: section.settings.title | strip_html | escape }}"
-        loading="eager"
-        width="900"
-        height="600"
-      >
-    {%- endif -%}
-  </div>
+  {% comment %} ---- Image de fond mobile (fallback : image desktop) ---- {% endcomment %}
+  {%- assign mobile_img = section.settings.image_mobile | default: section.settings.image_desktop -%}
+  {%- if mobile_img != blank -%}
+    <div
+      class="hero__bg hero__bg--mobile"
+      style="background-image: url({{ mobile_img | image_url: width: 1200 }});"
+      role="img"
+      aria-label="{{ section.settings.image_alt | default: section.settings.title | strip_html | escape }}"
+    ></div>
+  {%- endif -%}
 
-  {% comment %} ---- Overlay (gradient sombre derrière le texte sur desktop) ---- {% endcomment %}
+  {% comment %} ---- Overlay (gradient sombre derrière le texte) ---- {% endcomment %}
   <div class="hero__overlay"></div>
 
   {% comment %} ---- Contenu ---- {% endcomment %}
@@ -159,11 +154,10 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: var(--hero-mobile-bg);
     color: var(--hero-text-color);
   }
 
-  /* ===== Background image (desktop) ===== */
+  /* ===== Background images ===== */
   .hero--{{ section.id }} .hero__bg {
     position: absolute;
     inset: 0;
@@ -172,16 +166,14 @@
     background-repeat: no-repeat;
     z-index: 0;
   }
-
-  /* ===== Image mobile (cachée en desktop) ===== */
-  .hero--{{ section.id }} .hero__mobile-media {
+  /* Sur desktop : on n'affiche que l'image desktop */
+  .hero--{{ section.id }} .hero__bg--mobile {
     display: none;
   }
-  .hero--{{ section.id }} .hero__mobile-media img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+
+  /* ===== (ancien bloc mobile retiré) ===== */
+  .hero--{{ section.id }} .hero__mobile-media {
+    display: none;
   }
 
   /* ===== Overlay desktop ===== */
@@ -323,27 +315,24 @@
   }
 
   /* =====================================================
-     MOBILE : on switche en mode "image en haut + contenu en bas"
+     MOBILE : même layout que desktop (image fond + overlay + texte)
      ===================================================== */
   @media (max-width: 749px) {
-    .hero--{{ section.id }} {
-      background-color: var(--hero-mobile-bg);
-    }
-
-    .hero--{{ section.id }} .hero__bg,
-    .hero--{{ section.id }} .hero__overlay {
+    /* On bascule sur l'image mobile si elle existe (sinon le desktop reste visible) */
+    .hero--{{ section.id }} .hero__bg--desktop {
       display: none;
     }
-
-    .hero--{{ section.id }} .hero__mobile-media {
+    .hero--{{ section.id }} .hero__bg--mobile {
       display: block;
-      width: 100%;
+    }
+    /* Si pas d'image mobile, on retombe sur l'image desktop */
+    .hero--{{ section.id }} .hero__bg--desktop:only-of-type {
+      display: block;
     }
 
     .hero--{{ section.id }} .hero__container {
-      min-height: auto;
-      padding: 28px 20px 40px;
-      justify-content: flex-start;
+      min-height: var(--hero-min-height-mobile);
+      padding: 40px 20px;
     }
 
     .hero--{{ section.id }} .hero__content {
@@ -406,6 +395,16 @@
       "step": 20,
       "unit": "px",
       "default": 600
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Hauteur minimum (mobile)",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 500
     },
     {
       "type": "header",
@@ -628,16 +627,6 @@
       "id": "trust_subtitle_color",
       "label": "Couleur du texte sous le badge",
       "default": "#FFFFFF"
-    },
-    {
-      "type": "header",
-      "content": "Mobile"
-    },
-    {
-      "type": "color",
-      "id": "mobile_bg_color",
-      "label": "Couleur de fond (sous l'image)",
-      "default": "#1A1A1A"
     }
   ],
   "presets": [
