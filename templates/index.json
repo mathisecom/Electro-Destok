@@ -140,7 +140,7 @@
       "name": "Collection slider premium",
       "settings": {
         "heading": "Nos Climatiseurs",
-        "collection": "mono-split",
+        "collection": "",
         "products_limit": 8,
         "button_text": "Je découvre",
         "show_badges": false,
@@ -154,7 +154,7 @@
         "mobile_card_radius": 7,
         "max_width": 1140,
         "heading_size": 31,
-        "mobile_heading_size": 29,
+        "mobile_heading_size": 25,
         "heading_color": "#1a1a1a",
         "background_color": "#ffffff",
         "padding_top": 32,
