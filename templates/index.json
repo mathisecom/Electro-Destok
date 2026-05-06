@@ -131,20 +131,20 @@
       ],
       "name": "Pourquoi nous choisir",
       "settings": {
-        "bg_color": "#F5F5F5",
+        "bg_color": "#fdffff",
         "padding_top": 60,
         "padding_bottom": 60,
         "title_part1": "Pourquoi",
         "title_highlight": "choisir",
         "title_part2": "notre marque ?",
-        "title_color": "#0A0A0A",
-        "highlight_color": "#999999",
+        "title_color": "#182b34ff",
+        "highlight_color": "#344e5bff",
         "description": "<p>Depuis plus de 20 ans, nous rendons le confort accessible à tous grâce à notre expertise et nos innovations. Choisir notre marque, c'est soutenir une marque engagée et tournée vers l'avenir.</p>",
-        "text_color": "#4A4A4A",
+        "text_color": "#182b34ff",
         "button_text": "À propos",
         "button_link": "",
-        "button_bg": "#E5E5E5",
-        "button_text_color": "#0A0A0A"
+        "button_bg": "#344e5bff",
+        "button_text_color": "#ffffff"
       }
     }
   },
