@@ -749,6 +749,7 @@
         "feature_7WK8NK": {
           "type": "feature",
           "settings": {
+            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103103.560.png",
             "icon_svg": "",
             "title": "Marque française",
             "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
@@ -759,6 +760,7 @@
         "feature_f4Wzb8": {
           "type": "feature",
           "settings": {
+            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103344.524.png",
             "icon_svg": "",
             "title": "Rapport Qualité-Prix",
             "description": "Des produits performants à un prix accessible à tous.",
@@ -769,6 +771,7 @@
         "feature_73Cme4": {
           "type": "feature",
           "settings": {
+            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103530.501.png",
             "icon_svg": "",
             "title": "Fiabilité",
             "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
