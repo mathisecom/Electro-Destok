@@ -399,6 +399,71 @@
         "testimonial_card_text_color": "#182b34"
       }
     },
+    "installationservices_aXPEb7": {
+      "type": "installationservices",
+      "blocks": {
+        "feature_kRtfrU": {
+          "type": "feature",
+          "settings": {
+            "icon": "users",
+            "text": "Pose professionnelle par des techniciens qualifiés."
+          }
+        },
+        "feature_JPRfnF": {
+          "type": "feature",
+          "settings": {
+            "icon": "check",
+            "text": "Mise en route avec vérification complète."
+          }
+        },
+        "feature_hUDknL": {
+          "type": "feature",
+          "settings": {
+            "icon": "rocket",
+            "text": "Choix de la puissance adaptée à votre logement."
+          }
+        }
+      },
+      "block_order": [
+        "feature_kRtfrU",
+        "feature_JPRfnF",
+        "feature_hUDknL"
+      ],
+      "name": "Section Branding",
+      "settings": {
+        "image_position": "right",
+        "show_badge": false,
+        "show_badge_icon": false,
+        "badge_text": "Branding",
+        "title": "Nos Services D’installation",
+        "description": "<p>Profitez d’un accompagnement complet pour l’installation de votre climatisation : de la pose professionnelle à la mise en service, en passant par des conseils adaptés à votre logement.</p>",
+        "button_text": "Réserver un appel",
+        "button_url": "",
+        "image": "shopify://shop_images/installation.webp",
+        "show_decorations": true,
+        "image_radius": 18,
+        "bg_color": "#ffffff",
+        "text_color": "#182b34",
+        "description_color": "#71717a",
+        "badge_bg": "#f4f4f5",
+        "badge_text_color": "#18181b",
+        "feature_bg": "#ffffff",
+        "feature_text_color": "#18181b",
+        "feature_icon_bg": "#f4f4f5",
+        "feature_icon_color": "#18181b",
+        "button_color_from": "#182b34",
+        "button_color_to": "#344e5b",
+        "button_text_color": "#ffffff",
+        "image_bg_color": "#f2f2f2",
+        "decoration_color": "#344e5b",
+        "title_size": 40,
+        "title_size_mobile": 28,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 35,
+        "padding_bottom_mobile": 35
+      }
+    },
     "why_choose_iCzPq9": {
       "type": "why-choose",
       "blocks": {
@@ -503,6 +568,7 @@
     "rich_text_8xEmKb",
     "logoscroll_kLUNrz",
     "testimonials_TwVHi6",
+    "installationservices_aXPEb7",
     "why_choose_iCzPq9",
     "related-products"
   ]
