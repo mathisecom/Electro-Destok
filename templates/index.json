@@ -92,7 +92,7 @@
         "card_alignment": "center",
         "gap_size": 0,
         "mobile_layout": "slider",
-        "show_peek": true,
+        "show_peek": false,
         "show_dots": false,
         "autoplay": true,
         "autoplay_speed": 4,
