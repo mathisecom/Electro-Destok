@@ -142,6 +142,73 @@
         "input_text_color": ""
       }
     },
+    "beneficeicons_jABtFx": {
+      "type": "beneficeicons",
+      "blocks": {
+        "feature_3kL4td": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101034.482.png",
+            "title": "Prix Direct Fournisseur",
+            "description": "Climatiseurs Carrier sans intermédiaire, au meilleur prix."
+          }
+        },
+        "feature_YEfmFL": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101131.532.png",
+            "title": "Stock Disponible Rapidement",
+            "description": "Livraison rapide en 5 à 7 jours partout en France."
+          }
+        },
+        "feature_dHiAky": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101223.517.png",
+            "title": "Matériel Carrier Original",
+            "description": "Climatiseurs Carrier fiables, performants et authentiques."
+          }
+        }
+      },
+      "block_order": [
+        "feature_3kL4td",
+        "feature_YEfmFL",
+        "feature_dHiAky"
+      ],
+      "name": "Features Icônes",
+      "settings": {
+        "show_heading": false,
+        "heading": "Pourquoi nous choisir",
+        "subheading": "<p>Découvrez nos engagements et notre savoir-faire.</p>",
+        "heading_alignment": "center",
+        "columns_desktop": 3,
+        "card_alignment": "center",
+        "gap_size": 32,
+        "mobile_layout": "slider",
+        "show_peek": false,
+        "show_dots": false,
+        "autoplay": true,
+        "autoplay_speed": 4,
+        "icon_size": 76,
+        "icon_size_mobile": 66,
+        "heading_size": 36,
+        "heading_size_mobile": 26,
+        "title_size": 18,
+        "title_size_mobile": 17,
+        "description_size": 15,
+        "bg_color": "#ffffff",
+        "heading_color": "#182b34",
+        "subheading_color": "#182b34",
+        "title_color": "#182b34",
+        "description_color": "#182b34",
+        "dot_color": "#d4d4d8",
+        "dot_active_color": "#182b34",
+        "padding_top": 80,
+        "padding_bottom": 12,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
     "rich_text_8xEmKb": {
       "type": "rich-text",
       "blocks": {
@@ -335,6 +402,7 @@
   },
   "order": [
     "main",
+    "beneficeicons_jABtFx",
     "rich_text_8xEmKb",
     "testimonials_TwVHi6",
     "why_choose_iCzPq9",
