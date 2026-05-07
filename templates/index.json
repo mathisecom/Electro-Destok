@@ -809,7 +809,7 @@
         "highlight_color": "#344e5b",
         "description": "<p>Depuis plus de 20 ans, nous rendons le confort accessible à tous grâce à notre expertise et nos innovations. Choisir notre marque, c'est soutenir une marque engagée et tournée vers l'avenir.</p>",
         "text_color": "#182b34",
-        "button_text": "À propos",
+        "button_text": "",
         "button_link": "",
         "button_bg": "#344e5b",
         "button_text_color": "#ffffff"
