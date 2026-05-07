@@ -235,6 +235,74 @@
         "testimonial_card_text_color": "#182b34"
       }
     },
+    "why_choose_iCzPq9": {
+      "type": "why-choose",
+      "blocks": {
+        "feature_keEFAg": {
+          "type": "feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Marque française",
+            "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
+            "card_bg": "#FFFFFF",
+            "card_text_color": "#0A0A0A"
+          }
+        },
+        "feature_JWfFVU": {
+          "type": "feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Rapport qualité-prix",
+            "description": "Des produits performants à un prix accessible à tous.",
+            "card_bg": "#FFFFFF",
+            "card_text_color": "#0A0A0A"
+          }
+        },
+        "feature_iKhzHk": {
+          "type": "feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Fiabilité",
+            "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
+            "card_bg": "#FFFFFF",
+            "card_text_color": "#0A0A0A"
+          }
+        },
+        "feature_LHVxjF": {
+          "type": "feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Performance",
+            "description": "Grâce à une faible consommation énergétique A+++ / A++.",
+            "card_bg": "#FFFFFF",
+            "card_text_color": "#0A0A0A"
+          }
+        }
+      },
+      "block_order": [
+        "feature_keEFAg",
+        "feature_JWfFVU",
+        "feature_iKhzHk",
+        "feature_LHVxjF"
+      ],
+      "name": "Pourquoi nous choisir",
+      "settings": {
+        "bg_color": "#f7feff",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title_part1": "Pourquoi",
+        "title_highlight": "choisir",
+        "title_part2": "notre marque ?",
+        "title_color": "#182b34",
+        "highlight_color": "#344e5b",
+        "description": "<p>Depuis plus de 20 ans, nous rendons le confort accessible à tous grâce à notre expertise et nos innovations. Choisir notre marque, c'est soutenir une marque engagée et tournée vers l'avenir.</p>",
+        "text_color": "#4A4A4A",
+        "button_text": "À propos",
+        "button_link": "",
+        "button_bg": "#E5E5E5",
+        "button_text_color": "#0A0A0A"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -265,6 +333,7 @@
     "main",
     "rich_text_8xEmKb",
     "testimonials_TwVHi6",
+    "why_choose_iCzPq9",
     "related-products"
   ]
 }
