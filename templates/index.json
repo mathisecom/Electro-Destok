@@ -167,13 +167,13 @@
         "collection_card_JfWRVi": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "mono-split",
             "show_badge": true,
             "badge": "Bestseller",
             "title": "",
             "title_size": 25,
-            "show_description": true,
-            "description": "Climatiseur réversible avec unité extérieure",
+            "show_description": false,
+            "description": "",
             "description_size": 13
           }
         },
