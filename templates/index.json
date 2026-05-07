@@ -55,6 +55,7 @@
         "feature_KxmkgV": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101034.482.png",
             "title": "Prix Direct Fournisseur",
             "description": "Climatiseurs Carrier sans intermédiaire, au meilleur prix."
           }
@@ -62,6 +63,7 @@
         "feature_yhUcrt": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101131.532.png",
             "title": "Stock Disponible Rapidement",
             "description": "Livraison rapide en 5 à 7 jours partout en France."
           }
@@ -69,6 +71,7 @@
         "feature_ddcrF4": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T101223.517.png",
             "title": "Matériel Carrier Original",
             "description": "Climatiseurs Carrier fiables, performants et authentiques."
           }
@@ -93,7 +96,7 @@
         "show_dots": false,
         "autoplay": true,
         "autoplay_speed": 4,
-        "icon_size": 80,
+        "icon_size": 68,
         "icon_size_mobile": 70,
         "heading_size": 36,
         "heading_size_mobile": 26,
