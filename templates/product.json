@@ -248,24 +248,28 @@
         "image_fWRd4C": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_47.png",
             "url": ""
           }
         },
         "image_PmHXBp": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_50.png",
             "url": ""
           }
         },
         "image_E7Lwzi": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_49.png",
             "url": ""
           }
         },
         "image_apPdHd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_48.png",
             "url": ""
           }
         }
