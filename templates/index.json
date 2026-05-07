@@ -353,7 +353,7 @@
         "title": "Nos Services D’installation",
         "description": "<p>Profitez d’un accompagnement complet pour l’installation de votre climatisation : de la pose professionnelle à la mise en service, en passant par des conseils adaptés à votre logement.</p>",
         "button_text": "Réserver un appel",
-        "button_url": "",
+        "button_url": "shopify://pages/contact",
         "image": "shopify://shop_images/installation.webp",
         "show_decorations": false,
         "image_radius": 20,
