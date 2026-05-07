@@ -167,7 +167,8 @@
         "collection_card_JfWRVi": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "mono-split",
+            "image": "shopify://shop_images/Clim-Carrier-Prix-et-Avis-sur-les-modeles-et-la-qualite-1.webp",
             "show_badge": true,
             "badge": "Bestseller",
             "title": "",
