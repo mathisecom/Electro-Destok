@@ -181,7 +181,7 @@
         "collection_card_tDfVrz": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "multi-split-2-sorties",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
@@ -194,7 +194,7 @@
         "collection_card_i97KXK": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "multi-split-3-sorties",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
@@ -207,7 +207,20 @@
         "collection_card_GQKNAB": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "multi-split-4-sorties",
+            "show_badge": false,
+            "badge": "Bestseller",
+            "title": "",
+            "title_size": 25,
+            "show_description": false,
+            "description": "Climatiseur réversible avec unité extérieure",
+            "description_size": 13
+          }
+        },
+        "collection_card_dFr6Tz": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "multi-split-5-sorties",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
@@ -222,7 +235,8 @@
         "collection_card_JfWRVi",
         "collection_card_tDfVrz",
         "collection_card_i97KXK",
-        "collection_card_GQKNAB"
+        "collection_card_GQKNAB",
+        "collection_card_dFr6Tz"
       ],
       "name": "Collection slider premium",
       "settings": {
@@ -233,7 +247,7 @@
         "heading_color": "#1a1a1a",
         "heading_margin_bottom": 28,
         "mobile_heading_margin_bottom": 22,
-        "cards_desktop": 4,
+        "cards_desktop": 5,
         "cards_gap": 12,
         "tablet_card_width": 44,
         "mobile_card_width": 68,
