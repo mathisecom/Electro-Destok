@@ -848,8 +848,8 @@
         "item_AyJarA": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Quels sont les délais et modes de livraison ?",
+            "content": "<p>Nous couvrons et livrons à domicile toute l'Europe en 5 à 7 jours ouvrés.</p><p>Attention, en période de forte demande, les délais peuvent être rallongés. Nous proposons également un service prioritaire ou le service Express pour une livraison sous 1 à 3 jours.</p>"
           }
         },
         "item_WFAKeJ": {
