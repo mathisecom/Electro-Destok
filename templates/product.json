@@ -419,7 +419,7 @@
         "feature_hUDknL": {
           "type": "feature",
           "settings": {
-            "icon": "rocket",
+            "icon": "lightbulb",
             "text": "Choix de la puissance adaptée à votre logement."
           }
         }
@@ -548,7 +548,7 @@
         "stack_products": false,
         "show_progress_bar": true,
         "products_per_row_mobile": "1",
-        "products_per_row_desktop": 4,
+        "products_per_row_desktop": 5,
         "subheading": "",
         "title": "Vous Aimerez Aussi",
         "content": "",
