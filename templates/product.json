@@ -295,9 +295,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -323,9 +323,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 4,
-            "author": "John S.",
-            "title": "Testimonial 1",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Marc T.",
+            "title": "Je recommande Electro Destok sans hésiter.",
+            "content": "<p>Commande passée un mardi soir, livraison reçue le vendredi matin chez moi. La clim réversible Carrier fonctionne parfaitement depuis l'installation par mon chauffagiste. Prix très compétitif par rapport aux autres sites que j'avais consultés. Je recommande Electro Destok sans hésiter.</p>"
           }
         },
         "testimonial_f4e4n6": {
@@ -334,9 +334,9 @@
             "round_avatar": true,
             "show_rating": true,
             "rating": 5,
-            "author": "Mary U.",
-            "title": "Testimonial 2",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "author": "Sophie L.",
+            "title": "Efficace dès les premières chaleurs",
+            "content": "<p>J'avais besoin de conseils avant de choisir entre deux modèles Carrier pour mon salon de 35 m². Le service client a pris le temps de répondre à toutes mes questions par téléphone. Au final, le modèle conseillé est parfaitement adapté, silencieux et efficace dès les premières chaleurs. Merci !</p>"
           }
         },
         "testimonial_NzafFr": {
@@ -349,12 +349,36 @@
             "title": "Testimonial 3",
             "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
           }
+        },
+        "testimonial_kU3aiq": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "testimonial_MKLrDV": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
         }
       },
       "block_order": [
         "testimonial_yeTLbH",
         "testimonial_f4e4n6",
-        "testimonial_NzafFr"
+        "testimonial_NzafFr",
+        "testimonial_kU3aiq",
+        "testimonial_MKLrDV"
       ],
       "name": "Testimonials",
       "settings": {
@@ -384,8 +408,8 @@
             "icon_svg": "",
             "title": "Marque française",
             "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_JWfFVU": {
@@ -395,8 +419,8 @@
             "icon_svg": "",
             "title": "Rapport qualité-prix",
             "description": "Des produits performants à un prix accessible à tous.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_iKhzHk": {
@@ -406,8 +430,8 @@
             "icon_svg": "",
             "title": "Fiabilité",
             "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         },
         "feature_LHVxjF": {
@@ -417,8 +441,8 @@
             "icon_svg": "",
             "title": "Performance",
             "description": "Grâce à une faible consommation énergétique A+++ / A++.",
-            "card_bg": "#FFFFFF",
-            "card_text_color": "#0A0A0A"
+            "card_bg": "#ffffff",
+            "card_text_color": "#0a0a0a"
           }
         }
       },
@@ -442,7 +466,7 @@
         "text_color": "#182b34",
         "button_text": "",
         "button_link": "",
-        "button_bg": "#E5E5E5",
+        "button_bg": "#e5e5e5",
         "button_text_color": "#182b34"
       }
     },
