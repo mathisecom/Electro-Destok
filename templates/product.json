@@ -241,7 +241,6 @@
         "feature_keEFAg": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103103.560.png",
             "icon_svg": "",
             "title": "Marque française",
             "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
@@ -252,7 +251,6 @@
         "feature_JWfFVU": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103344.524.png",
             "icon_svg": "",
             "title": "Rapport qualité-prix",
             "description": "Des produits performants à un prix accessible à tous.",
@@ -263,7 +261,6 @@
         "feature_iKhzHk": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103530.501.png",
             "icon_svg": "",
             "title": "Fiabilité",
             "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
@@ -274,7 +271,6 @@
         "feature_LHVxjF": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103628.484.png",
             "icon_svg": "",
             "title": "Performance",
             "description": "Grâce à une faible consommation énergétique A+++ / A++.",
@@ -291,9 +287,9 @@
       ],
       "name": "Pourquoi nous choisir",
       "settings": {
-        "bg_color": "#fdffff",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "bg_color": "#f7feff",
+        "padding_top": 60,
+        "padding_bottom": 60,
         "title_part1": "Pourquoi",
         "title_highlight": "choisir",
         "title_part2": "notre marque ?",
