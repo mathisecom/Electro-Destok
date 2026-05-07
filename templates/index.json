@@ -185,7 +185,7 @@
             "badge": "Bestseller",
             "title": "",
             "title_size": 25,
-            "show_description": true,
+            "show_description": false,
             "description": "Climatiseur réversible avec unité extérieure",
             "description_size": 13
           }
@@ -198,7 +198,7 @@
             "badge": "Bestseller",
             "title": "",
             "title_size": 25,
-            "show_description": true,
+            "show_description": false,
             "description": "Climatiseur réversible avec unité extérieure",
             "description_size": 13
           }
@@ -211,7 +211,7 @@
             "badge": "Bestseller",
             "title": "",
             "title_size": 25,
-            "show_description": true,
+            "show_description": false,
             "description": "Climatiseur réversible avec unité extérieure",
             "description_size": 13
           }
