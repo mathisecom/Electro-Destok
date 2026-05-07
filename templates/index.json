@@ -754,7 +754,7 @@
             "title": "Marque française",
             "description": "Une expertise locale au service de votre confort depuis plus de 20 ans.",
             "card_bg": "#ffffff",
-            "card_text_color": "#0a0a0a"
+            "card_text_color": "#182b34"
           }
         },
         "feature_f4Wzb8": {
@@ -765,7 +765,7 @@
             "title": "Rapport Qualité-Prix",
             "description": "Des produits performants à un prix accessible à tous.",
             "card_bg": "#ffffff",
-            "card_text_color": "#0a0a0a"
+            "card_text_color": "#182b34"
           }
         },
         "feature_73Cme4": {
@@ -776,17 +776,18 @@
             "title": "Fiabilité",
             "description": "Équipés des meilleurs composants du marché et garantis 2 ans.",
             "card_bg": "#ffffff",
-            "card_text_color": "#0a0a0a"
+            "card_text_color": "#182b34"
           }
         },
         "feature_c7NMjE": {
           "type": "feature",
           "settings": {
+            "icon_image": "shopify://shop_images/CREA_1080X1080_-_2026-05-07T103628.484.png",
             "icon_svg": "",
             "title": "Performance",
             "description": "Grâce à une faible consommation énergétique A+++ / A++.",
             "card_bg": "#ffffff",
-            "card_text_color": "#0a0a0a"
+            "card_text_color": "#182b34"
           }
         }
       },
