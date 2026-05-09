@@ -182,6 +182,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "multi-split-2-sorties",
+            "image": "shopify://shop_images/D_NQ_NP_605173-MLM96183957236_102025-O.webp",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
@@ -195,6 +196,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "multi-split-3-sorties",
+            "image": "shopify://shop_images/Nouveau_projet_7.webp",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
@@ -208,6 +210,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "multi-split-4-sorties",
+            "image": "shopify://shop_images/Nouveau_projet_8.webp",
             "show_badge": false,
             "badge": "Bestseller",
             "title": "",
