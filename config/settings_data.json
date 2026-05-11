@@ -54,7 +54,7 @@
           "phone_number": "+33630114845",
           "button_text": "Contactez-nous sur WhatsApp",
           "position": "right",
-          "mobile_icon_only": false
+          "mobile_icon_only": true
         }
       }
     }
