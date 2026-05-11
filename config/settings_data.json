@@ -45,7 +45,19 @@
     "cart_show_free_shipping_threshold": false,
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "1531194425928624464": {
+        "type": "shopify://apps/whatsapp-chat/blocks/whatsapp-chat-embed/019be5b3-ddb7-72e9-ab02-aef07c5497b8",
+        "disabled": false,
+        "settings": {
+          "phone_number": "+33630114845",
+          "button_text": "Contactez-nous sur WhatsApp",
+          "position": "right",
+          "mobile_icon_only": true
+        }
+      }
+    }
   },
   "presets": {
     "Sound": {
